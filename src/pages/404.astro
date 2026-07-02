@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ACQUISITION_MAILTO } from '../config/site';
+---
+
+<BaseLayout
+  title="Page Not Found — phxsugarwaxing.com"
+  description="The page you requested could not be found."
+  noindex={true}
+>
+  <div class="min-h-screen flex items-center justify-center px-6">
+    <div class="text-center max-w-md">
+      <p class="modern-pill inline-block mb-4">404</p>
+      <h1 class="font-display text-4xl tracking-tight mb-4">Page not found</h1>
+      <p class="text-[#5C5C5C] mb-8">The page you are looking for does not exist or has been moved.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-3 bg-[#B85C38] hover:bg-[#A04E30] text-white font-semibold rounded-2xl transition-all"
+        >
+          Return Home
+        </a>
+        <a
+          href={ACQUISITION_MAILTO}
+          class="inline-flex items-center justify-center px-8 py-3 border border-[#D4C9B8] hover:bg-white text-[#4A5D4A] font-semibold rounded-2xl transition-all"
+        >
+          Inquire to Acquire
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

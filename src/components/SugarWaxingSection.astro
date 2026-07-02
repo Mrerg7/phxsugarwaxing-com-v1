@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+
+const benefits = (await getCollection('benefits')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="sugarwaxing" class="bg-white border-y border-[#EDE4D7]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+    <div class="text-center mb-12">
+      <div class="modern-pill inline-block mb-3">ANCIENT METHOD • MODERN BENEFITS</div>
+      <h2 class="section-header tracking-tight">The natural, gentle hair removal clients prefer</h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto text-[#4A5D4A]">
+      <p class="text-base sm:text-lg leading-relaxed">
+        Sugar waxing (also known as sugaring or Persian waxing) is an ancient, natural hair removal method that uses a
+        paste made primarily of sugar, lemon juice, and water. Used since 1900 BC in regions surrounding Persia and
+        Egypt, it is applied at room or body temperature — eliminating the risk of burns associated with hot wax.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 mt-12">
+      {
+        benefits.map(({ data }) => (
+          <div class="clean-section rounded-3xl p-6 sm:p-8">
+            <h4 class="font-semibold text-base sm:text-lg mb-4 flex items-center gap-x-3">
+              <span class="w-10 h-10 bg-[#F8F1E9] rounded-full flex items-center justify-center shrink-0">
+                <i class={`fa-solid ${data.icon} text-[#B85C38]`}></i>
+              </span>
+              <span>{data.title}</span>
+            </h4>
+            <p class="text-[#5C5C5C] text-sm sm:text-base leading-relaxed">{data.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

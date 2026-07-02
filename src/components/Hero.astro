@@ -1,0 +1,65 @@
+---
+import { ACQUISITION_MAILTO, cfImageUrl, CF_IMAGES } from '../config/site';
+
+const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
+---
+
+<header class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+  <div
+    class="absolute inset-0 z-0"
+    style={`background-image: url('${heroImage}'); background-size: cover; background-position: center;`}
+    aria-hidden="true"
+  ></div>
+  <div class="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-black/20 to-[#F8F1E9]/95" aria-hidden="true"></div>
+
+  <div class="relative z-[2] max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+    <div class="inline-flex items-center gap-x-2 mb-6">
+      <div class="modern-pill flex items-center gap-x-2 px-4 py-1.5 rounded-2xl text-xs font-bold tracking-[1px] bg-white/90">
+        <i class="fa-solid fa-leaf fa-xs"></i>
+        <span>NATURAL • GENTLE • ANCIENT</span>
+      </div>
+    </div>
+
+    <h1 class="domain-name tracking-tighter mb-4 text-white drop-shadow-sm">phxsugarwaxing.com</h1>
+
+    <p class="max-w-2xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95 mb-5">
+      The clean, modern domain with<br class="hidden md:block" /> powerful local SEO built in.
+    </p>
+
+    <p class="max-w-md mx-auto text-base sm:text-lg text-white/80 mb-10">
+      Own the most direct and searchable name for professional sugar waxing in Phoenix.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-lg sm:max-w-none mx-auto">
+      <a
+        href={ACQUISITION_MAILTO}
+        class="group inline-flex items-center justify-center gap-x-3 px-8 sm:px-9 py-4 bg-[#B85C38] hover:bg-[#A04E30] text-white font-semibold text-base sm:text-lg rounded-3xl transition-all active:scale-[0.985] shadow-lg shadow-[#B85C38]/30"
+      >
+        <span>Inquire to Acquire</span>
+        <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform"></i>
+      </a>
+
+      <a
+        href="#sugarwaxing"
+        class="inline-flex items-center justify-center px-8 py-4 border border-white/40 hover:bg-white/10 text-white font-semibold text-base sm:text-lg rounded-3xl transition-all"
+      >
+        Learn About Sugar Waxing
+      </a>
+    </div>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-6 text-sm text-white/75">
+      <div class="flex items-center gap-x-1.5">
+        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <span>Full phrase local SEO</span>
+      </div>
+      <div class="flex items-center gap-x-1.5">
+        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <span>Natural beauty positioning</span>
+      </div>
+      <div class="flex items-center gap-x-1.5">
+        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <span>Premium .com authority</span>
+      </div>
+    </div>
+  </div>
+</header>

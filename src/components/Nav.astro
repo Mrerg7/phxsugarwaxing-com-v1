@@ -1,0 +1,52 @@
+---
+import { ACQUISITION_MAILTO } from '../config/site';
+---
+
+<nav class="bg-white/95 backdrop-blur-md border-b border-[#EDE4D7] sticky top-0 z-50" id="site-nav">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="/" class="flex items-center gap-x-2 sm:gap-x-3 min-w-0">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 bg-[#B85C38] rounded-2xl flex items-center justify-center shrink-0">
+          <span class="text-white text-sm sm:text-base font-bold tracking-tighter">PSW</span>
+        </div>
+        <div class="truncate">
+          <span class="font-semibold text-lg sm:text-2xl tracking-tight">phxsugarwaxing</span>
+          <span class="font-semibold text-lg sm:text-2xl tracking-tight text-[#B85C38]">.com</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-x-2 sm:gap-x-3 shrink-0">
+        <a
+          href="#why"
+          class="hidden md:block px-4 py-2 text-sm font-medium text-[#4A5D4A] hover:text-[#2D2D2D] transition-colors"
+        >
+          Why This Domain
+        </a>
+        <a
+          href="#sugarwaxing"
+          class="hidden md:block px-4 py-2 text-sm font-medium text-[#4A5D4A] hover:text-[#2D2D2D] transition-colors"
+        >
+          About Sugar Waxing
+        </a>
+        <a
+          href={ACQUISITION_MAILTO}
+          class="inline-flex items-center justify-center px-4 sm:px-7 py-2 sm:py-2.5 bg-[#B85C38] hover:bg-[#A04E30] text-white text-xs sm:text-sm font-semibold rounded-2xl transition-all active:scale-[0.985]"
+        >
+          Inquire to Acquire
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    if (!nav) return;
+    if (window.scrollY > 20) {
+      nav.classList.add('nav-scrolled');
+    } else {
+      nav.classList.remove('nav-scrolled');
+    }
+  });
+</script>
