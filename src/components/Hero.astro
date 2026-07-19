@@ -4,36 +4,50 @@ import { ACQUISITION_MAILTO, cfImageUrl, CF_IMAGES } from '../config/site';
 const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
 ---
 
-<header class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+<header class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+  <!-- Fixed parallax background — stays in place while page scrolls -->
   <div
-    class="absolute inset-0 z-0"
-    style={`background-image: url('${heroImage}'); background-size: cover; background-position: center;`}
+    id="hero-parallax-bg"
+    class="hero-parallax-bg fixed inset-0 z-0"
+    style={`
+      background-image: url('${heroImage}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    `}
     aria-hidden="true"
   ></div>
-  <div class="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-black/20 to-[#F8F1E9]/95" aria-hidden="true"></div>
 
-  <div class="relative z-[2] max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
-    <div class="inline-flex items-center gap-x-2 mb-6">
-      <div class="modern-pill flex items-center gap-x-2 px-4 py-1.5 rounded-2xl text-xs font-bold tracking-[1px] bg-white/90">
+  <!-- Overlay scoped to hero height only -->
+  <div
+    class="absolute inset-0 z-[1] bg-gradient-to-b from-black/45 via-black/25 to-[#F8F1E9]/95"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-[2] w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-24 text-center">
+    <div class="inline-flex items-center gap-x-2 mb-5 sm:mb-6">
+      <div class="modern-pill flex items-center gap-x-2 px-3 sm:px-4 py-1.5 rounded-2xl text-xs sm:text-xs font-bold tracking-[1px] bg-white/90">
         <i class="fa-solid fa-leaf fa-xs"></i>
         <span>NATURAL • GENTLE • ANCIENT</span>
       </div>
     </div>
 
-    <h1 class="domain-name tracking-tighter mb-4 text-white drop-shadow-sm">phxsugarwaxing.com</h1>
+    <h1 class="domain-name tracking-tighter mb-3 sm:mb-4 text-white drop-shadow-md px-2">
+      phxsugarwaxing.com
+    </h1>
 
-    <p class="max-w-2xl mx-auto text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95 mb-5">
-      The clean, modern domain with<br class="hidden md:block" /> powerful local SEO built in.
+    <p class="max-w-2xl mx-auto text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95 mb-4 sm:mb-5 px-2">
+      The clean, modern domain with<br class="hidden sm:block" /> powerful local SEO built in.
     </p>
 
-    <p class="max-w-md mx-auto text-base sm:text-lg text-white/80 mb-10">
+    <p class="max-w-md mx-auto text-sm sm:text-lg text-white/85 mb-8 sm:mb-10 px-2">
       Own the most direct and searchable name for professional sugar waxing in Phoenix.
     </p>
 
-    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-lg sm:max-w-none mx-auto">
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto px-2">
       <a
         href={ACQUISITION_MAILTO}
-        class="group inline-flex items-center justify-center gap-x-3 px-8 sm:px-9 py-4 bg-[#B85C38] hover:bg-[#A04E30] text-white font-semibold text-base sm:text-lg rounded-3xl transition-all active:scale-[0.985] shadow-lg shadow-[#B85C38]/30"
+        class="group inline-flex items-center justify-center gap-x-3 w-full sm:w-auto px-8 sm:px-9 py-3.5 sm:py-4 bg-[#B85C38] hover:bg-[#A04E30] text-white font-semibold text-base sm:text-lg rounded-3xl transition-all active:scale-[0.985] shadow-lg shadow-[#B85C38]/30"
       >
         <span>Inquire to Acquire</span>
         <i class="fa-solid fa-arrow-right group-hover:translate-x-0.5 transition-transform"></i>
@@ -41,25 +55,66 @@ const heroImage = cfImageUrl(CF_IMAGES.heroImageId);
 
       <a
         href="#sugarwaxing"
-        class="inline-flex items-center justify-center px-8 py-4 border border-white/40 hover:bg-white/10 text-white font-semibold text-base sm:text-lg rounded-3xl transition-all"
+        class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 sm:py-4 border border-white/40 hover:bg-white/10 text-white font-semibold text-base sm:text-lg rounded-3xl transition-all"
       >
         Learn About Sugar Waxing
       </a>
     </div>
 
-    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-6 text-sm text-white/75">
+    <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-x-6 text-xs sm:text-sm text-white/80 px-2">
       <div class="flex items-center gap-x-1.5">
-        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <i class="fa-solid fa-check text-[#E8A07A]"></i>
         <span>Full phrase local SEO</span>
       </div>
       <div class="flex items-center gap-x-1.5">
-        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <i class="fa-solid fa-check text-[#E8A07A]"></i>
         <span>Natural beauty positioning</span>
       </div>
       <div class="flex items-center gap-x-1.5">
-        <i class="fa-solid fa-check text-[#B85C38]"></i>
+        <i class="fa-solid fa-check text-[#E8A07A]"></i>
         <span>Premium .com authority</span>
       </div>
     </div>
+
+    <div class="mt-10 sm:mt-12 animate-bounce motion-reduce:animate-none">
+      <a
+        href="#why"
+        class="inline-flex flex-col items-center gap-y-2 text-white/60 hover:text-white transition-colors min-h-[44px] justify-center"
+        aria-label="Scroll to learn why this domain"
+      >
+        <span class="text-xs sm:text-xs uppercase tracking-[3px] font-semibold">Scroll</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </div>
   </div>
+
+  <div
+    class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-[2]"
+    aria-hidden="true"
+  ></div>
 </header>
+
+<script>
+  const bg = document.getElementById('hero-parallax-bg');
+  const hero = bg?.closest('header');
+
+  function updateParallax() {
+    if (!bg || !hero) return;
+
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || heroBottom <= 0) {
+      bg.style.opacity = heroBottom <= 0 ? '0' : '1';
+      return;
+    }
+
+    bg.style.opacity = '1';
+    const scrollY = window.scrollY;
+    bg.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0)`;
+  }
+
+  updateParallax();
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  window.addEventListener('resize', updateParallax, { passive: true });
+</script>
