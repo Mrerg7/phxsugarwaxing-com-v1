@@ -1,65 +1,33 @@
 ---
+import InquiryForm from './InquiryForm.astro';
 import { ACQUISITION_MAILTO, SITE } from '../config/site';
 ---
 
-<section id="acquire" class="bg-[#2D2D2D] text-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
-    <div class="max-w-xl mx-auto">
-      <div class="inline-block px-4 py-1 bg-white/10 rounded-full text-xs font-medium tracking-wider mb-6">
-        PREMIUM LOCAL ASSET
+<section id="inquire" class="bg-[#2D2D2D] text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="grid lg:grid-cols-[1fr_1.05fr] gap-10 items-start">
+      <div>
+        <p class="text-xs font-bold tracking-[0.18em] text-[#E8A07A] mb-4">PRIVATE OFFERS</p>
+        <h2 class="font-display text-3xl sm:text-5xl tracking-tight leading-tight mb-5">
+          Make an offer on phxsugarwaxing.com
+        </h2>
+        <p class="text-white/75 text-base sm:text-lg leading-relaxed mb-6">
+          No public price. No auction. Tell the seller what you will pay and how you will use the name.
+          Escrow.com, or another escrow service you both accept, is the preferred way to pay.
+        </p>
+        <ol class="space-y-3 text-sm sm:text-base text-white/85 mb-8">
+          <li class="flex gap-3"><span class="text-[#E8A07A] font-bold">1</span> Send the offer. Expect a reply within one business day.</li>
+          <li class="flex gap-3"><span class="text-[#E8A07A] font-bold">2</span> Agree on price and escrow.</li>
+          <li class="flex gap-3"><span class="text-[#E8A07A] font-bold">3</span> Start the .com transfer at your registrar. The seller approves it.</li>
+        </ol>
+        <p class="text-sm text-white/60">
+          Prefer your own mail app?
+          <a class="text-white underline underline-offset-2" href={ACQUISITION_MAILTO}>{SITE.email}</a>
+        </p>
       </div>
-
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter leading-tight mb-6">
-        Own the most direct name for<br class="hidden sm:block" /> sugar waxing in Phoenix.
-      </h2>
-
-      <p class="text-lg sm:text-xl text-white/70 mb-10 leading-relaxed">
-        phxsugarwaxing.com is a clean, modern domain with strong local SEO and clear positioning for the growing
-        demand in natural hair removal. It offers excellent brand clarity for serious buyers building a specialized
-        business in the Phoenix market.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href={ACQUISITION_MAILTO}
-          class="inline-flex items-center justify-center gap-x-3 px-8 sm:px-10 py-4 bg-white text-[#2D2D2D] hover:bg-[#F8F1E9] font-semibold text-base sm:text-lg rounded-3xl transition-all active:scale-[0.985]"
-        >
-          <span>Make an Offer</span>
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-
-        <button
-          type="button"
-          id="copy-email-btn"
-          data-email={SITE.email}
-          class="inline-flex items-center justify-center gap-x-3 px-8 py-4 border border-white/30 hover:bg-white/5 font-medium text-base sm:text-lg rounded-3xl transition-all"
-        >
-          <span>Copy Contact Email</span>
-        </button>
+      <div class="rounded-3xl bg-[#F8F1E9] text-[#2D2D2D] p-5 sm:p-8">
+        <InquiryForm id="offer-form-home" />
       </div>
-
-      <p class="mt-8 text-sm text-white/50">Serious inquiries only. Contact: {SITE.email}</p>
     </div>
   </div>
 </section>
-
-<script>
-  const btn = document.getElementById('copy-email-btn');
-  btn?.addEventListener('click', async () => {
-    const email = btn.dataset.email;
-    if (!email) return;
-
-    const label = btn.querySelector('span');
-    const original = label?.textContent ?? 'Copy Contact Email';
-
-    try {
-      await navigator.clipboard.writeText(email);
-      if (label) label.textContent = 'Copied!';
-      setTimeout(() => {
-        if (label) label.textContent = original;
-      }, 2000);
-    } catch {
-      window.location.href = `mailto:${email}`;
-    }
-  });
-</script>

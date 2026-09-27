@@ -1,6 +1,8 @@
 # phxsugarwaxing.com
 
-Static Astro landing page for the premium domain **phxsugarwaxing.com**, deployed to Cloudflare Workers Static Assets.
+Static Astro sales page for the premium domain **phxsugarwaxing.com**, deployed to Cloudflare Workers Static Assets.
+
+The site sells the domain. It is not a sugar waxing salon and does not take appointments.
 
 ## Stack
 
@@ -24,11 +26,20 @@ npm run build
 npm run deploy
 ```
 
-Build output goes to `dist/`. Wrangler serves it globally at the edge with no Worker script.
+`npm run deploy` needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Pushing to `main` runs the same deploy when those GitHub Actions secrets exist.
+
+Build output goes to `dist/`.
+
+## SEO notes
+
+- Canonical host is `https://phxsugarwaxing.com` (www 301s to apex in the Worker).
+- Indexable URLs: `/`, `/acquire/`, `/phoenix-sugar-waxing/`, plus `sitemap-index.xml` and `llms.txt`.
+- Schema describes a domain **Product** for sale. It does not mark up a fake local salon.
+- Domain Authority is not claimed. Scores like Moz DA come from links over time.
 
 ## Acquisition Contact
 
-All CTAs route to **sales@desertrich.com**.
+Offers go to **sales@desertrich.com**. Escrow is preferred.
 
 ## Images
 

@@ -1,13 +1,15 @@
 export const SITE = {
   name: 'phxsugarwaxing.com',
-  title: 'phxsugarwaxing.com • Premium Domain for Sale | Phoenix Sugar Waxing',
+  title: 'phxsugarwaxing.com for Sale | Phoenix Sugar Waxing Domain',
   description:
-    'Own phxsugarwaxing.com — the clean, modern domain with powerful local SEO for professional sugar waxing in Phoenix.',
+    'phxsugarwaxing.com is for sale. Exact-match .com for Phoenix sugar waxing, with escrow transfer. Make a private offer.',
   url: 'https://phxsugarwaxing.com',
   email: 'sales@desertrich.com',
   locale: 'en_US',
   location: 'Phoenix, Arizona',
   googleSiteVerification: '',
+  published: '2026-07-02',
+  modified: '2026-09-27',
 } as const;
 
 export const CF_IMAGES = {
@@ -21,6 +23,6 @@ export function cfImageUrl(imageId: string, variant = 'public'): string {
 
 export const OG_IMAGE = cfImageUrl(CF_IMAGES.heroImageId);
 
-export const ACQUISITION_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent('Acquisition Inquiry - phxsugarwaxing.com')}&body=${encodeURIComponent('Hello,\n\nI am interested in acquiring phxsugarwaxing.com. Please provide details and next steps.\n\nBest regards,')}`;
+export const ACQUISITION_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent('Offer for phxsugarwaxing.com')}&body=${encodeURIComponent('Hello,\n\nI would like to acquire phxsugarwaxing.com.\n\nName:\nEmail:\nOffer (USD):\nIntended use:\n\nMessage:\n')}`;
 
-export const DISCLAIMER_DATE = 'July 2, 2026';
+export const DISCLAIMER_DATE = 'September 27, 2026';

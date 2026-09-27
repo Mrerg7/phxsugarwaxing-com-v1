@@ -1,0 +1,17 @@
+{
+  "name": "phxsugarwaxing.com for sale",
+  "short_name": "phxsugarwaxing",
+  "description": "Exact-match Phoenix sugar waxing domain for sale.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F1E9",
+  "theme_color": "#F8F1E9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
